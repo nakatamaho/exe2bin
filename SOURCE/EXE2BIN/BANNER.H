@@ -29,7 +29,11 @@
 ****************************************************************************/
 
 
+#ifdef __WATCOMC__
+#include "BANCFG.H"
+#else
 #include "bancfg.h"
+#endif
 
 #define DOBANSTR( p )   #p
 #define BANSTR( p )     DOBANSTR( p )

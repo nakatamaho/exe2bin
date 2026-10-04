@@ -40,9 +40,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef __WATCOMC__
+/* Open Watcom: case-sensitive cross builds need the exact file names. */
+#include "WATCOM.H"
+#include "EXEDOS.H"
+#include "BANNER.H"
+#else
 #include "watcom.h"             /* unsigned_16, ..., endian-macros, ...*/
 #include "exedos.h"             /* dos_exe_header, ...*/
 #include "banner.h"             /* Watcom banner*/
+#endif
 
 #ifdef __TURBOC__
 #include <dir.h>
